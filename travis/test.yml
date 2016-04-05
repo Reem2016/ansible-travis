@@ -1,9 +1,10 @@
 ---
  - hosts: localhost
    user: root
-
- - group:
-    gid=444     name=Munaf         state=present
+   
+   tasks:
+   - group:
+      gid=444     name=Munaf         state=present
  
   #tasks:
  #- ansible-platbook task.yml
