@@ -1,25 +1,25 @@
 ---
- sudo: required
- language: python
- python: "2.7"
+sudo: required
+language: python
+python: "2.7"
 
- env:
+env:
 
- before_install:
-   - sudo apt-get update -qq
+before_install:
+  - sudo apt-get update -qq
 
- install:
-   # Install Ansible.
-   - pip install ansible
+install:
+  # Install Ansible.
+  - sudo yum install ansible
 
-   # Add ansible.cfg to pick up roles path.
-   #- "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
+  # Add ansible.cfg to pick up roles path.
+  #- "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
 
- script:
-   # Check the role/playbook's syntax.
-   - "ansible-playbook -i travis/inventory travis/test.yml --syntax-check"
+script:
+  # Check the role/playbook's syntax.
+  - "ansible-playbook -i travis/inventory travis/test.yml --syntax-check"
 
-   # Run the role/playbook with ansible-playbook.
+  # Run the role/playbook with ansible-playbook.
   - "ansible-playbook -i travis/inventory travis/test.yml --connection=local --sudo"
 
   # Run the role/playbook again, checking to make sure it's idempotent.
