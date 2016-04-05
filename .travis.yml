@@ -20,7 +20,8 @@ script:
   - "ansible-playbook -i travis/inventory travis/test.yml --syntax-check"
 
   # Run the role/playbook with ansible-playbook.
-  - "ansible-playbook -i travis/inventory travis/test.yml --connection=local --sudo"
+ # - "ansible-playbook -i travis/inventory travis/test.yml --connection=local --sudo"
+  - "ansible-playbook -i travis/inventory travis/test.yml"
 
   # Run the role/playbook again, checking to make sure it's idempotent.
   #- >
