@@ -2,5 +2,5 @@
  - hosts: localhost
    user: root
 
-   roles:
-     - ansible
+  tasks:
+     - ansible-platbook task.yml
