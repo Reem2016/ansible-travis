@@ -3,4 +3,4 @@
    user: root
 
    roles:
-     - ansible
+     - travis-ansible
